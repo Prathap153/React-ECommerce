@@ -1,0 +1,66 @@
+/* Navbar styles */
+.navbar {
+  background-color: #333; /* Dark background */
+  padding: 1rem; /* Padding around the navbar */
+}
+
+.navbar ul {
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar li {
+  position: relative; 
+  margin-right: 20px; 
+}
+
+.navbar a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px; /* Padding around links */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.navbar a:hover {
+  background-color: #555; /* Change background on hover */
+}
+
+.category-text{
+  color: white;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute; /* Position dropdown relative to parent */
+  background-color: #333; /* Background color for dropdown */
+  border: 1px solid #555; /* Border around dropdown */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  display: none; /* Initially hidden */
+}
+
+.navbar li:hover .dropdown {
+  display: block; /* Show dropdown on hover of the parent li */
+}
+
+.dropdown li {
+  display: block;
+}
+.dropdown a {
+  display: block; /* Full-width clickable area */
+  padding: 10px; /* Padding for dropdown items */
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.search-container {
+  padding-left: 53rem;
+}
+
+.button-search {
+  padding-left:1rem;
+  background-color: blue;
+}
+
