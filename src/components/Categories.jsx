@@ -97,18 +97,23 @@ const Categories = () => {
                     <div className="price-range-container">
                         <h3 class="price-text">Price Range</h3>
                      <form onSubmit={handleFilterSubmit} >
-                        <input
+                        <label>Min:
+                         <input
                             type="text"
                             placeholder="Min Price"
                             value={minPrice}
                             onChange={handleMinPriceChange}
-                        />
-                        <input
+                         />
+                        </label>
+                        <label>
+                            Max:
+                         <input
                             type="text"
                             placeholder="Max Price"
                             value={maxPrice === '' ? '' : maxPrice}
                             onChange={handleMaxPriceChange}
-                        />
+                         />
+                        </label>
                         <button type="submit">Filter</button>
                       </form>
                     </div>

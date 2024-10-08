@@ -31,7 +31,7 @@ const ProductsComponent = ({ products }) => {
 
     return (
         <div>
-            <h1>Hello Products List</h1>
+            <h1>Products</h1>
             <div className="product-grid">
                 {products.map(product => (
                     <div className="product-card" key={product.id}>
