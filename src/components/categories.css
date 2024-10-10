@@ -30,7 +30,7 @@
 }
 
 .product-price {
-    font-size: 1.1em; /* Price size */
+    font-size: 13em; /* Price size */
     color: #007bff; /* Color for price */
     margin: 5px 0; /* Space above and below price */
 }
@@ -46,7 +46,11 @@
     align-items: flex-end;
 }
 
-.price-text{
+.price-text {
     padding-right: 19em;
+}
+
+.product-detail {
+    
 }
 

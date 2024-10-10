@@ -21,15 +21,15 @@ function App() {
   extractUniqueCategories(products)
  },[products]);
 
-const getAllProducts = () => {
-    GetAllProducts().then((res)=>{
-        console.log(res);
-        setProducts(res);
-    })
-    .catch((error) =>{
-        console.log(error);
-    })
- };
+ const getAllProducts = async () => {
+  try {
+      const res = await GetAllProducts();
+      console.log(res);
+      setProducts(res);
+  } catch (error) {
+      console.error("Error fetching products:", error);
+  }
+};
   
  const extractUniqueCategories = (products) => {
   const uniqueCategories = Array.from(new Set(products.map(product => product.category)));
@@ -42,7 +42,7 @@ const getAllProducts = () => {
       <Routes>
         <Route path="/" element={ <ProductsComponent products={products}/>} />
         <Route path="/category/:category" element={<Categories />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/product/:id" element={<Product  />} />
        </Routes>
     </div>
   );
