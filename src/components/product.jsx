@@ -14,13 +14,23 @@ const Product = () => {
         getProductById(id);
     }, [id]);
 
-    const getProductById = (id) => {
-        GetProductById(id).then((res) => {
-            console.log(res);
-            setProduct(res);
-        }).catch((err) => {
-            console.log("error", err);
-        })
+    // const getProductById = async (id) => {
+    //     GetProductById(id).then((res) => {
+    //         console.log(res);
+    //         setProduct(res);
+    //     }).catch((err) => {
+    //         console.log("error", err);
+    //     })
+    // }
+
+    const getProductById = async (id) => {
+        try{
+           const res = await GetProductById(id);
+           setProduct(res);
+        }
+        catch(error){
+            console.log("FEtching error at product by id",error);
+        }
     }
 
     const handleback = () => {

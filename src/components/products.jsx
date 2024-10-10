@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 // import { GetAllProducts } from "../apis/ApiServices"
+
 import { useNavigate } from "react-router-dom";
 import "./products.css";
 
@@ -38,7 +39,9 @@ const ProductsComponent = ({ products }) => {
                         <img src={product.image} alt={product.title} className="product-image" />
                         <h2 className="product-title">{product.title}</h2>
                         <p className="product-price">${product.price}</p>
-                        <button onClick={()=>handleClick(product.id)}>Details</button>
+                        <div className="product-detail">
+                          <button onClick={()=>handleClick(product.id)}>Details</button>
+                        </div>
                     </div>
                 ))}
             </div>

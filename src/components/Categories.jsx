@@ -19,16 +19,27 @@ const Categories = () => {
         resetFilters();
     },[category]);
 
-    const getProductsCategory =(category) =>{
-        GetProductsBycategory(category)
-        .then((res)=>{
-            console.log(res);
-            setCategoryNameList(res);
-            })
-        .catch((error)=>{
+    // const getProductsCategory =(category) =>{
+    //     GetProductsBycategory(category)
+    //     .then((res)=>{
+    //         console.log(res);
+    //         setCategoryNameList(res);
+    //         })
+    //     .catch((error)=>{
+    //         console.log("Error at fetching with category",error);
+    //     })
+    // }
+
+    const getProductsCategory = async(category) =>{
+        try {
+           const res= await GetProductsBycategory(category);
+           setCategoryNameList(res);
+        }
+        catch (error){
             console.log("Error at fetching with category",error);
-        })
+        }
     }
+
 
     const resetFilters = () => {
         setIsFiltered(false);
@@ -126,7 +137,9 @@ const Categories = () => {
                                     <img src={product.image} alt={product.title} className="product-image" />
                                     <h2 className="product-title">{product.title}</h2>
                                     <p className="product-price">${product.price}</p>
-                                    <button onClick={() => handleClick(product.id)}>Details</button>
+                                    <div className="product-detail">
+                                       <button onClick={() => handleClick(product.id)}>Details</button>
+                                    </div>
                                 </div>
                             ))
                         )}
